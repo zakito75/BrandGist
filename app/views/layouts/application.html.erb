@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keleyshop</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+ <div class="navbar navbar-default">
+        <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                                <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                                        <span class="icon-bar"></span>
+                                                                </button>
+  <a class="navbar-brand" href="/" style="color:grey">KeleyShop</a>
+  <ul>
+    <p>Filtrer:</p>
+    <li><li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul>
+    <p>Trier par:</p>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+                                                                            </div>
+                                                                            
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <div class="product-search">
+      <%= search_form_for @q do |f| %>
+        <%= f.label :name_start, "Name" %>
+        <%= f.text_field :name_cont %>
+         <%= f.submit %>
+</div>
+                                                                                                                           <% end %>
+                                                                                                                           </div>
+                                                                                                                                                                                                                            </div>
+<%= yield %>
+
+</body>
+</html>

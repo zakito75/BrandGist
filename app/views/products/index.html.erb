@@ -1,0 +1,16 @@
+<h1 class="section-title">liste produits</h1>
+<% @products.each do |product| %>
+  <div class="bloc-product">
+    <div class=container-img-title">
+   <div class="container-image">
+     <%= image_tag "smartphone.jpg", :class => "img-preview" %>
+    </div>
+    </div>
+    <p class="text-description-product"><%= product.description %></p>
+    <div class="info-product">
+     <p class="price-product"><%= product.price %></p>
+     <p class="version-product"><%= product.version %></p>
+   </div>
+  </div>
+<% end %>
+<%= paginate @products %>
