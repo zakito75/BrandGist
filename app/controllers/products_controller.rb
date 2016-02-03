@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
+before_filter :set_search
+#pour eviter un conflit au show du product
   def index
-    @products = Product.page(params[:page]).per(3)
+    @products = @q.result.page(params[:page]).per(3)
     @categories = Category.all
-    @q = Product.search(params[:q])
-    @search = @q.result
   end
 
   def show

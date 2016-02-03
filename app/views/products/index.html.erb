@@ -1,4 +1,4 @@
-<h1 class="section-title">liste produits</h1>
+<h1 class="section-title">liste produits:</h1>
 <% @products.each do |product| %>
   <div class="bloc-product">
     <div class=container-img-title">
@@ -6,10 +6,11 @@
      <%= image_tag "smartphone.jpg", :class => "img-preview" %>
     </div>
     </div>
-    <p class="text-description-product"><%= product.description %></p>
+    <p class="text-description-product"><%= truncate(product.description, :lenght => 20) %></p>
     <div class="info-product">
      <p class="price-product"><%= product.price %></p>
      <p class="version-product"><%= product.version %></p>
+     <a href="/products/<%= product.id %>">En savoir plus</a>
    </div>
   </div>
 <% end %>
