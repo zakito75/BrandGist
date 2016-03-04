@@ -93,6 +93,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    pg (0.18.4)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     rack (1.6.4)
@@ -178,6 +179,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   paperclip
+  pg
   rails (= 4.2.5)
   ransack
   sass-rails (>= 3.2)
