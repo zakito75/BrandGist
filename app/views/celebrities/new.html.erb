@@ -1,0 +1,17 @@
+<div class="row">
+  <div>
+    <%= form_for @celebrity do |f| %>
+      <div class="input-group input-group-sm">
+          <span class="input-group-addon" id="sizing-addon3">@</span>
+          <%= f.text_field :name, :class => "form-control", :placeholder => "Nom de la celebrité" %>
+          </div>
+          <div class="input-group input-group-sm">
+              <span class="input-group-addon" id="sizing-addon3">@</span>
+              <%= f.text_field :description, :class =>"form-control", :placeholder => "description de la celebrité" %>
+              </div>
+      <%= f.file_field :picture %>
+      <%= f.submit :value => "Ajouter celebrité" %>
+    <% end %>
+    <a href="/">Retour </a>
+  </div>
+</div>

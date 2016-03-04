@@ -11,20 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202104619) do
+ActiveRecord::Schema.define(version: 20160304054707) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string  "name"
-    t.text    "description"
-    t.string  "price"
-    t.string  "version"
-    t.integer "category_id"
+  create_table "celebrities", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "source"
+    t.integer  "category_id"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
-  add_index "products", ["category_id"], name: "index_products_on_category_id"
+  add_index "celebrities", ["category_id"], name: "index_celebrities_on_category_id"
 
 end

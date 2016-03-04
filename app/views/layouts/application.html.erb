@@ -1,52 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Keleyshop</title>
+  <title>BrandGist</title>
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
- <div class="navbar navbar-default">
-        <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                                <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                                        <span class="icon-bar"></span>
-                                                                </button>
-  <a class="navbar-brand" href="/" style="color:grey">KeleyShop</a>
-  <div class="container-list-filter">
-    <div class="bloc-list-left" align="center"><br>
-     <form>
-      <h1 class="title-list-filter">filtrer:</h1>
-      <input type="checkbox" name="option1" value="Tag 1"> Tag 1<br>
-      <input type="checkbox" name="option2" value="Tag 2"> Tag 2<br>
-      <input type="checkbox" name="option3" value="Tag 3"> Tag 3<br>
-      <br>
-    </form>
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+  <a class="navbar-brand" href="/" style="color:grey">BrandGist</a>
     </div>
- <div align="center"><br>
-  <h1 class="title-list-filter">trier par:</h1>
- <form>
-  <input type="checkbox" name="option1" value="Prix"> Prix<br>
-  <input type="checkbox" name="option2" value="Récent"> Récent<br>
-  <br>
- </form>
- </div>
-</div>
-                                                                            </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <%= search_form_for @q do |f| %>
+      <%= f.label :name_start, "Name" %>
+      <%= f.text_field :name_cont %>
+      <%= f.submit %>
+    <% end %>                  
+    </div>
+<a href="/celebrities/new" class="btn btn-primary btn-new" role="button">Ajouter celebrités</a>
+  </div>
+</nav>
                                                                             
-  <div class="navbar-collapse collapse navbar-responsive-collapse">
-    <div class="product-search">
-      <%= search_form_for @q do |f| %>
-        <%= f.label :name_start, "Name" %>
-        <%= f.text_field :name_cont %>
-         <%= f.submit %>
-</div>
-                                                                                                                           <% end %>
-                                                                                                                           </div>
-                                                                                                                                                                                                                            </div>
 <%= yield %>
 
 </body>
