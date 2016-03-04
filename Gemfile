@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-
+gem 'rack-cache'
 gem 'paperclip'
 gem 'kaminari'
 gem 'ransack'
@@ -27,6 +27,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sqlite3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -36,12 +37,6 @@ gem 'activerecord'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-group :development do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-end
 
 group :development, :test do
   gem 'byebug'
